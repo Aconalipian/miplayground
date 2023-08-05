@@ -1,0 +1,36 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Pagina de Cursos
+{% endblock titulo %}
+
+
+
+{% block contenido %}
+<h1>Bienvenido a Cursos!</h1>
+
+<table class="table table-striped">
+    <thead>
+     <tr>
+        <th>Id</th>
+        <th>Curso</th>
+        <th>Comision</th>
+     </tr>
+    </thead>
+    <tbody>
+        {%for elemento in cursos     %}
+        <tr>
+            <td>{{ elemento.id }}</td>
+            <td>{{ elemento.nombre }}</td>
+            <td>{{ elemento.comision }}</td>
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}
+    
