@@ -17,7 +17,7 @@ def home(request):
 
 
 def cursos(request):
-    contexto = {'cursos': Curso.objects.all() }
+    contexto = {'cursos': Curso.objects.all(), 'titulo': 'Reporte de cursos','comisiones' : ['55630', '55640']}
     return render(request, "app1/cursos.html", contexto)
 
 def profesores(request):

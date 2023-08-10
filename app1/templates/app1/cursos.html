@@ -3,14 +3,17 @@
 
 
 {% block titulo %}
-    Pagina de Cursos
+    <h1> pagina de Cursos</h1>
 {% endblock titulo %}
 
 
 
 {% block contenido %}
-<h1>Bienvenido a Cursos!</h1>
+<!-- como definir un titulo en views.py-->
+<h1> {{ titulo | capfirst }}   Hoy: {% now "d / m / y"    %}
+</h1>
 
+<h4> Cantidad de cursos: {{cursos | length }}</h4>
 <table class="table table-striped">
     <thead>
      <tr>
@@ -31,6 +34,17 @@
         {% endfor %}
     </tbody>
 </table>
+
+<!-- como recorrer un for-->
+{%for comi in comisiones %}
+
+    {{comi }}
+    
+    
+{%endfor %}
+
+<!-- como recorrer una lista-->
+{% comment %} <h4> Comisiones: {{ comisiones.0 }}, {{ comisiones.1 }} </h4> {% endcomment %}
 
 {% endblock contenido %}
     
